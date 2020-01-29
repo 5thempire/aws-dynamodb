@@ -63,12 +63,10 @@ class TestDynamoComplexClass(unittest.TestCase):
         self.dyn.put(self.key, self.sample_data)
 
         data = self.dyn.get(self.key)
+
         self.assertEqual(self.complete_sample, data['Item'])
-        self.complete_sample.update(data['Item'])
 
     def test_update(self):
-        self.sample.update({COMPLEX_SCHEMA_KEY_TWO: {'S': GREEN}, 'outro': {'S': 'dummy_value'}, 'sample': {'S': 'dummy'}})
-
         self.dyn.put(self.key, self.sample_data)
         self.dyn.update(self.key, RED)
 
@@ -77,7 +75,6 @@ class TestDynamoComplexClass(unittest.TestCase):
         data = self.dyn.get(self.key)
 
         self.assertEqual(self.complete_sample, data['Item'])
-        self.complete_sample.update(data['Item'])
 
     def test_filters(self):
         TOTAL_ITEMS = 50

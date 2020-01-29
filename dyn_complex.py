@@ -83,18 +83,3 @@ class ComplexTableClass(DynamoGeneralClass):
         params = self.update_params(key, status, timestamp)
 
         self.dynamodb.update_item(**params)
-
-    def update_key_one(self, key):
-        self.update(key, GREEN)
-
-    def insert(self, key, data):
-        """
-        Insert a new key, if already exists it will be replaced
-        by this one. The status is set as RED
-        """
-        new_data = {
-            COMPLEX_SCHEMA_KEY_ONE: {'S': RED}
-            }
-
-        new_data.update(data)
-        self.put(key, new_data)
