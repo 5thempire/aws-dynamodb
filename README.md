@@ -1,6 +1,6 @@
 # AWS DynamoDB
 
-An python approach on how to interact with several AWS DynamoDB tables.
+A python approach on how to interact with several AWS DynamoDB tables.
 
 ## Requirements
 
