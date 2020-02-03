@@ -4,7 +4,7 @@ from abc import abstractmethod
 import boto3
 
 
-class DynamoGeneralClass:
+class DynamoBase:
 
     def __init__(self, conf):
         self.conf = conf

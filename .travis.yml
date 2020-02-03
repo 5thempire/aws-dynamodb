@@ -12,4 +12,7 @@ before_install:
   - make services
 
 script:
-  - make test
+  - make tests
+
+after_success:
+  - coveralls
