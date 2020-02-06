@@ -25,19 +25,18 @@ SCHEMA = {
         'WriteCapacityUnits': 10
     },
     'GlobalSecondaryIndexes': [{
-      'IndexName': INDEX_STATUS_KEY,
-      'KeySchema': [
-        {
-          'AttributeName': STATUS,
-          'KeyType': 'HASH'
+        'IndexName': INDEX_STATUS_KEY,
+        'KeySchema': [{
+            'AttributeName': STATUS,
+            'KeyType': 'HASH'
         }
-      ],
-      'Projection': {
-        'ProjectionType': 'ALL'
-      },
-      'ProvisionedThroughput': {
-        'ReadCapacityUnits': 10,
-        'WriteCapacityUnits': 10
-      }
+        ],
+        'Projection': {
+            'ProjectionType': 'ALL'
+        },
+        'ProvisionedThroughput': {
+            'ReadCapacityUnits': 10,
+            'WriteCapacityUnits': 10
+        }
     }],
 }

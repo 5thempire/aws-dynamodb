@@ -49,6 +49,10 @@ class DynamoBase:
     def update_params(self, key, data):
         pass
 
+    @abstractmethod
+    def remove_params(self, key, data):
+        pass
+
     def get(self, key):
         """
         Get from DynamoDB
@@ -78,3 +82,10 @@ class DynamoBase:
         """
         data = self.get(key)
         return True if 'Item' in data else False
+
+    def remove(self, key):
+        """
+        Removes a key
+        """
+        params = self.remove_params(key)
+        self.dynamodb.delete_item(**params)

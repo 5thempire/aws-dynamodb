@@ -1,7 +1,5 @@
-from datetime import datetime
-
 from dynamo.base import DynamoBase
-from samples.log.schema import TABLE_NAME, SCHEMA, TIMESTAMP, STATUS, INDEX_STATUS_KEY
+from samples.log.schema import TABLE_NAME, TIMESTAMP, STATUS, INDEX_STATUS_KEY
 
 
 class DynamoLog(DynamoBase):

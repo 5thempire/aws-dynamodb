@@ -8,7 +8,7 @@ class DynamoDomain(DynamoBase):
         params = {
             'TableName': TABLE_NAME,
             'Key': {
-                DOMAIN: {"S": key}
+                URL: {"S": key}
             }
         }
         return params
@@ -17,18 +17,27 @@ class DynamoDomain(DynamoBase):
         params = {
             'TableName': TABLE_NAME,
             'Item': {
-                DOMAIN: {"S": key},
+                URL: {"S": key},
             }
         }
         params['Item'].update(data)
         return params
 
+    def remove_params(self, key):
+        params = {
+            'TableName': TABLE_NAME,
+            'Key': {
+                URL: {"S": key}
+            }
+        }
+        return params
+
     def set_value(self, key, value):
         params = {
-            URL: {'S': value}
+            DOMAIN: {'S': value}
         }
         self.put(key, params)
 
-    def get_url(self, key):
+    def get_domain(self, key):
         data = self.get(key)
         return data['Item'][URL]['S']

@@ -1,17 +1,17 @@
-TABLE_NAME = 'SimpleSchemaTableName'
+TABLE_NAME = 'Domain'
 DOMAIN = 'domain'
 URL = 'url'
 SCHEMA = {
     'TableName': TABLE_NAME,
     'AttributeDefinitions': [
         {
-            'AttributeName': DOMAIN,
+            'AttributeName': URL,
             'AttributeType': 'S'
         }
     ],
     'KeySchema': [
         {
-            'AttributeName': DOMAIN,
+            'AttributeName': URL,
             'KeyType': 'HASH'
         }
     ],

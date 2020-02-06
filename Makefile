@@ -14,3 +14,6 @@ test-log:
 tests:
 	make test-domain
 	make test-log
+
+lint:
+	flake8 --exclude venv/ . --max-line-length=120

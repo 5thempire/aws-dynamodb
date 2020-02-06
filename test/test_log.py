@@ -1,5 +1,4 @@
 import unittest
-from datetime import datetime
 
 from dynamo.conf import aws_conf
 from samples.log.interface import DynamoLog
